@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FITZONE — Fitness & Gym | Coimbatore</title>
+<meta name="description" content="FITZONE Fitness Center: strength, CrossFit, weight loss and personal training in Coimbatore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="nav" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">FIT<span>ZONE</span></a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#programs">Programs</a>
+      <a href="#trainers">Trainers</a><a href="#membership">Membership</a><a href="#schedule">Schedule</a>
+      <a href="#contact">Contact</a>
+      <a href="#membership" class="btn btn-sm">Join Now</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <h1>Build your body.<br>Build your confidence.</h1>
+    <p>Train harder. Get stronger. Become the best version of yourself.</p>
+    <div class="btn-row">
+      <a href="#membership" class="btn">Join Now</a>
+      <a href="#programs" class="btn btn-ghost">Explore Programs</a>
+    </div>
+    <ul class="stats glass">
+      <li><b data-count="10">0</b>+<span>Expert Trainers</span></li>
+      <li><b data-count="500">0</b>+<span>Active Members</span></li>
+      <li><b data-count="20">0</b>+<span>Fitness Programs</span></li>
+      <li><b data-count="8">0</b>+<span>Years Experience</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about">
+    <img class="reveal" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=70" alt="Weights rack in a modern gym" loading="lazy">
+    <div class="reveal">
+      <h2>More than a gym</h2>
+      <p>FITZONE is a Coimbatore training floor built around real progress. Certified coaches, modern equipment, personalized workout plans and a friendly community that turns up when you do.</p>
+      <ul class="ticks"><li>Professional training</li><li>Modern equipment</li><li>Personalized workout plans</li><li>Friendly fitness community</li></ul>
+      <div class="mini-stats"><div><b>500+</b>members</div><div><b>8+</b>years</div><div><b>20+</b>programs</div></div>
+      <button class="btn" data-go="#programs">Learn More</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section alt" id="programs">
+  <div class="container">
+    <h2>Programs</h2><p class="lead">Six ways to train. Pick the one that fits your goal.</p>
+    <div class="grid" id="programGrid"></div>
+  </div>
+</section>
+
+<!-- TRAINERS -->
+<section class="section" id="trainers">
+  <div class="container">
+    <h2>Meet your trainers</h2><p class="lead">Coaches who plan, spot and push.</p>
+    <div class="grid" id="trainerGrid"></div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="section alt" id="membership">
+  <div class="container">
+    <h2>Membership</h2><p class="lead">No joining fee. Cancel any month.</p>
+    <div class="grid plans">
+      <article class="plan reveal"><h3>Basic</h3><p class="price">₹999<small>/month</small></p>
+        <ul><li>Gym Access</li><li>Cardio Equipment</li><li>Locker Access</li><li>Basic Workout Plan</li></ul>
+        <button class="btn btn-ghost join" data-plan="Basic">Join Now</button></article>
+      <article class="plan featured reveal"><span class="badge">Most popular</span><h3>Pro</h3><p class="price">₹1,999<small>/month</small></p>
+        <ul><li>Everything in Basic</li><li>Personal Trainer</li><li>Diet Guidance</li><li>Group Classes</li><li>Progress Tracking</li></ul>
+        <button class="btn join" data-plan="Pro">Join Now</button></article>
+      <article class="plan reveal"><h3>Elite</h3><p class="price">₹3,499<small>/month</small></p>
+        <ul><li>Everything in Pro</li><li>One-to-One Training</li><li>Customized Diet Plan</li><li>Priority Support</li><li>Body Transformation Program</li></ul>
+        <button class="btn btn-ghost join" data-plan="Elite">Join Now</button></article>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="section" id="schedule">
+  <div class="container">
+    <h2>Weekly schedule</h2><p class="lead">Drop in to any class included in your plan.</p>
+    <div class="table-wrap"><table id="scheduleTable"></table></div>
+  </div>
+</section>
+
+<!-- CALCULATORS -->
+<section class="section alt" id="tools">
+  <div class="container grid two">
+    <form class="card glass" id="bmiForm" novalidate>
+      <h3>BMI calculator</h3>
+      <label>Height (cm)<input type="number" id="bmiHeight" min="100" max="250"></label>
+      <label>Weight (kg)<input type="number" id="bmiWeight" min="25" max="300"></label>
+      <button class="btn">Calculate BMI</button>
+      <p class="result" id="bmiResult" role="status"></p>
+    </form>
+    <form class="card glass" id="calForm" novalidate>
+      <h3>Calorie calculator</h3>
+      <div class="row2">
+        <label>Age<input type="number" id="calAge" min="15" max="90"></label>
+        <label>Gender<select id="calGender"><option value="male">Male</option><option value="female">Female</option></select></label>
+        <label>Height (cm)<input type="number" id="calHeight" min="100" max="250"></label>
+        <label>Weight (kg)<input type="number" id="calWeight" min="25" max="300"></label>
+      </div>
+      <label>Activity level<select id="calActivity">
+        <option value="1.2">Sedentary</option><option value="1.375">Lightly Active</option>
+        <option value="1.55">Moderately Active</option><option value="1.725">Very Active</option></select></label>
+      <button class="btn">Calculate calories</button>
+      <p class="result" id="calResult" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container slider">
+    <h2>Member stories</h2>
+    <div class="slides" id="slides" aria-live="polite"></div>
+    <div class="slider-ctrl">
+      <button class="icon-btn" id="prevBtn" aria-label="Previous testimonial">‹</button>
+      <div class="dots" id="dots"></div>
+      <button class="icon-btn" id="nextBtn" aria-label="Next testimonial">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section alt" id="gallery">
+  <div class="container">
+    <h2>Transformations</h2><p class="lead">Click any photo to view it larger.</p>
+    <div class="gallery" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container grid two">
+    <form class="card glass" id="contactForm" novalidate>
+      <h3>Send us a message</h3>
+      <label>Name<input id="cName" autocomplete="name"><small class="err"></small></label>
+      <label>Email<input id="cEmail" type="email" autocomplete="email"><small class="err"></small></label>
+      <label>Phone<input id="cPhone" type="tel" autocomplete="tel"><small class="err"></small></label>
+      <label>Subject<input id="cSubject"><small class="err"></small></label>
+      <label>Message<textarea id="cMessage" rows="4"></textarea><small class="err"></small></label>
+      <button class="btn">Send message</button>
+      <p class="result ok" id="formSuccess" role="status" hidden>Thanks! We'll call you back within one working day.</p>
+    </form>
+    <div class="info">
+      <h3>FITZONE FITNESS CENTER</h3>
+      <p>📍 Coimbatore, Tamil Nadu</p>
+      <p>📞 <a href="tel:+919876543210">+91 98765 43210</a></p>
+      <p>✉️ <a href="mailto:fitzone@gmail.com">fitzone@gmail.com</a></p>
+      <h4>Opening hours</h4>
+      <p>Monday – Saturday: 5:00 AM – 10:00 PM</p>
+      <p>Sunday: 6:00 AM – 2:00 PM</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container foot-grid">
+    <div><a href="#home" class="logo">FIT<span>ZONE</span></a><p>Strength, community and coaching in the heart of Coimbatore.</p>
+      <p class="social"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">FB</a><a href="#" aria-label="YouTube">YT</a></p></div>
+    <div><h4>Quick links</h4><a href="#about">About</a><a href="#membership">Membership</a><a href="#schedule">Schedule</a></div>
+    <div><h4>Programs</h4><a href="#programs">Strength Training</a><a href="#programs">CrossFit</a><a href="#programs">Personal Training</a></div>
+    <div><h4>Contact</h4><p>Coimbatore, Tamil Nadu</p><p>+91 98765 43210</p><p>fitzone@gmail.com</p></div>
+  </div>
+  <p class="copy">© 2026 FITZONE Fitness Center. All Rights Reserved.</p>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+<div class="modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <button class="close" id="closeLb" aria-label="Close">×</button><img id="lbImg" alt="">
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
